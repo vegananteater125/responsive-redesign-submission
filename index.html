@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    <head>
+      <title>Responsive Redesign</title>
+
+      <!-- import javascript variables and functions
+      <script src="app.js" defer></script> -->
+      <!-- import CSS styles -->
+      <link rel="stylesheet" href="styles.css" /> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <!-- page content goes into <body> -->
+    <body>
+      <div class="page-wrapper">
+
+          <div class="thirds-container" id="title-wrapper">
+            <div id="banner-images">
+              <img>
+              <img>
+            </div>
+            <h1>Responsive Redesign</h1>
+            <h3 style="margin-left: 0.25em; color: white; font-weight: 400; font-size: 2em;">Redesigning Explore RI.</h3>
+          </div>
+
+          <div id="toc-container">
+            <div id="site-jumps">
+              <b>Visit:  </b>
+              <a href="https://exploreri.org/gSiteReport2.php?siteID=102&src=siteList" target="_blank">Original Site</a>  • 
+                <a href="https://vegananteater125.github.io/responsive-redesign/" target="_blank">Redesigned Site</a>
+            </div>
+            <div id="toc-text">
+              <p>
+                <b>Jump to:  </b>
+                <a href="#overview">Overview</a>  • 
+                <a href="#finding-problems">Finding Problems</a> • 
+                <a href="#accessibility">Accessibility</a> • 
+                <a href="#low-fidelity">Low-Fidelity</a> • 
+                <a href="#visual-design-style-guide">Visual Design Style Guide</a> • 
+                <a href="#high-fidelity">High-Fidelity</a> • 
+                <a href="#development">Development</a> • 
+              </p>
+
+            </div>
+
+          </div>
+
+          <div id="overview" class="thirds-container">
+            
+            <div class="full-thirds">
+
+              <h3 >Overview</h3>
+              <p>
+                I decided to redesign <a href="https://exploreri.org/gSiteReport2.php?siteID=102&src=siteList" target="_blank">this page from Explore Rhode Island</a>,
+                which is the first Google search result for a popular park close to where I live.
+                <br><br>
+                <img id="original-screenshot" src="./assets/original-screenshot.png">
+                <br><br>The site provides critical information on directions, ADA accessibility, trail restrictions, and historical context all difficult to find elsewhere; all useful and unique information hindered by poor design.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="alt-thirds-container" id="finding-problems">
+            <div class="full-thirds">
+              <h3>Finding Problems</h3>
+              
+              <p>
+                To assess the usability of the webpage, I completed a Cognitive Walkthrough of the webpage to experience the webpage through the eyes of the user. 
+                <br><br>To do this, I came up with a set of scenarios, keeping in mind a broad range of users with differing contexts and needs.
+              </p>
+
+              <p>
+                <br>
+                My scenarios included:
+                <br>
+              </p>
+              <div style="margin-top: 0;">
+                <p>
+                  <ul>
+                    <li>
+                      Check if the park has wheelchair-friendly trails and ADA accessible parking
+                    </li>
+                    <li>
+                      Examine the distance and difficulty of the park’s trail.
+                    </li>
+                    <li>
+                      Figure out how to best get to the park across several modes of transport
+                    </li>
+
+                  </ul>
+
+                  <div class="show-more">
+                    <a>Click to see all scenarios</a>
+                  </div>
+
+                  <div class="more-scenarios">
+                    <ul>
+
+                      <li>
+                        Return to the previous page
+                      </li>
+                      <li>
+                        Read and respond to other user-submitted comments and additions.
+                      </li>
+                      <li>
+                        Evaluate how others have rated the park.
+                      </li>
+                       <li>
+                        Submit a comment for review, then edit and cancel review of that comment.
+                       </li>
+                       <li>
+                        Send private feedback to the web admin.
+                       </li>
+                       <li>
+                        Learn the history and contextual details of the park.
+                       </li>
+                       <li>
+                        Plan trail routes for visiting the park ahead of time.
+                       </li>
+                       <li>
+                        Navigate to other sections of the website.
+                       </li>
+                       <li>
+                        Share specific content from the page to others.
+                       </li>
+                       <li>
+                        See how the park looks through pictures.
+                       </li>
+
+                    </ul>
+                  </div>
+
+
+                  <script>
+var coll = document.getElementsByClassName("show-more");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+                  </script>
+
+                </p>
+              </div>
+
+              <p style="margin-bottom: 0;">
+                <br>For each step of each scenario, I asked myself the following questions:</p>
+                
+                <div class="focused-text-container" style="margin-top: 0;">
+                  <p>
+                    <br>
+                    Will the correct action be sufficiently evident to the user?
+                    <br>Will the user notice that the correct action is available?
+                    <br>Will the user associate and interpret the response from the action correctly?
+                    </p>
+                </div>
+
+                <p>
+                  <br>
+                  After going through these, I also went through Nielson’s 10 Heuristics to fuel my insights. I also accessed the website across phones, tablets, and desktops across varying window sizes and orientations.
+                  <br><br>
+                  I summarized my findings into 6 key points:
+                </p>
+
+                <div class="focused-text-container" style="margin-top: 0;">
+                  <p>
+                    <br>
+                    <b>Scattered hierarchy and organization</b> of information with related elements, such as transportation methods and trail maps, separated across the webpage. Running through different tasks made me scan back and forth and search in a very scattered, unorganized path.
+                    <br><br>
+                    <b>Inconsistent affordances from interactive UI elements</b>regarding their interactability and linked functions, while also lacking feedback upon toggling, hovering, and clicking, leading to possibility for errors in conflict with user’s conceptual model.
+                    <br><br>
+                    <b>Undersized text, hyperlinks, and images </b>create difficulty in legibility and interaction, the latter especially for users on touchscreens, using gloves, or with precision impairments.
+                    <br><br>
+                    <b>Lack of responsiveness</b> across differing devices. For example, on mobile, several UI elements break with overlapping elements and spacings hiding UI elements and decreasing legibility.
+                    <br><br>
+                    <b>Significant visual clutter</b> from overuse of differing colors and font-family/weight/size, alongside lack of contrast across UI and lack of white space creating unneeded density and lack of emphasis.
+                    <br><br>
+                    <b>Inconsistent language and unaccompanied icons</b> lead to confusion of park information. 
+
+
+                    <br>
+                    <br>
+                  </p>
+                  <div class="findings-expand">
+                    <a>Click to view my complete list of findings</a>
+                  </div>
+                  <div class="additional-findings">
+                    <iframe src="./assets/extrafindings.pdf"></iframe>
+                  </div>
+
+                </div>
+
+                <script>
+                  var coll = document.getElementsByClassName("findings-expand");
+                  var i;
+
+                  for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function() {
+                      this.classList.toggle("active");
+                      var content = this.nextElementSibling;
+                      if (content.style.display === "flex") {
+                        content.style.display = "none";
+                      } else {
+                        content.style.display = "flex";
+                      }
+                    });
+                                    }
+                </script>
+
+            </div>
+          </div>
+
+          <div class="thirds-container" id="accessibility">
+
+            <div class="full-thirds">
+
+              <h3>Accessibility</h3>
+              <p>
+                I also examined the accessibility of this webpage using WebAIM WAVE to assess compatibility with screen readers, keyboard navigation, and on contrast with the following results:
+              </p>
+              <div class="focused-text-container">
+                <p>
+                  <br>
+                  <ul>
+  
+                    <li>
+                      Lack of alternative text on a many key buttons and on all images of the park, and redundant alternative text on several images or alternative text tags with no content.
+                    </li>
+  
+  
+                    <li>
+                      Missing language descriptor.
+                    </li>
+  
+  
+                    <li>
+                      Very low contrast and size warnings on a significant amount of text on buttons and paragraphs.                    </li>
+  
+                    <li>
+                      No page regions and no use of ARIA outside of linked Google maps widget.                    
+                    </li>
+
+                    <li>
+                      Skipped heading levels and smaller p tags styled to match larger headings.                    
+                    </li>
+
+                    <li>
+                      Most buttons lacking keyboard event handlers.                    
+                    </li>
+  
+                  </ul>
+                  
+                  <br>
+                  <br>
+                </p>
+              </div>
+              <p>
+                Judging from these findings, I would expect keyboard and/or screen reader navigation of this webpage to be extremely difficult, if not outright impossible. The only area I might disagree with is regarding low contrast, as some text contrast is still quite legible even on grayscale.
+                </p>
+
+            </div>
+
+          </div>
+
+          <div class="alt-wider-container" id="low-fidelity">
+
+            <div class="wider-container-centered-wrapper">
+              <h3>Low-Fidelity</h3>
+
+              <p>
+                I then created three Low-Fidelity wireframes for Desktop, Tablet, and Mobile sizes addressing the key issues I found:
+              </p>
+              
+            </div>
+
+            <div class="full-thirds">
+
+              <div class="wider-container-centered-wrapper">
+                <!-- <h4 class="screenshot-labels">Desktop</h4> -->
+              </div>
+              <div class="desktop-screenshot-container">
+                <iframe src="./assets/lofi-desktop.pdf"></iframe>
+              </div>
+
+              <div class="tablet-screenshot-container">
+                <iframe src="./assets/lofi-tablet.pdf"></iframe>
+              </div>
+
+              <div class="mobile-screenshot-container">
+                <iframe src="./assets/lofi-mobile.pdf"></iframe>
+              </div>
+
+            </div>
+
+            <div class="wider-container-centered-wrapper">
+              <!-- <p>
+                If the following files are unavailable, please use 
+                <a></a>
+              </p> -->
+              
+            </div>
+          </div>
+
+          <div class="wider-container" id="visual-design-style-guide">
+
+
+            <div class="wider-container-centered-wrapper">
+              <h3>Visual Design Style Guide</h3>
+              <p>
+                I then created the following visual design style guide. I focused on maintaining the emphasis on nature-inspired blues and greens that the original site had, while mixing in cleaner UI elements, sans-serif typography, and more interaction states.
+              </p>
+            </div>
+
+            <div class="full-thirds">
+
+              <div class="full-thirds">
+
+                <div class="guide-screenshot-container">
+                  <iframe src="./assets/visualdesignstyleguide.pdf"></iframe>
+                </div>
+  
+  
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="alt-wider-container" id="high-fidelity">
+
+            <div class="wider-container-centered-wrapper">
+              <h3>High-Fidelity</h3>
+              <p>
+                I designed three separate high fidelity prototypes for Desktop (1440px wide), Tablet (768px wide), and Mobile (375px wide) with annotation for development.
+              </p>
+            </div>
+
+            <div class="full-thirds">
+              <div class="desktop-screenshot-container">
+                <iframe src="./assets/hifi-desktop.pdf"></iframe>
+              </div>
+
+              <div class="tablet-screenshot-container">
+                <iframe src="./assets/hifi-tablet.pdf"></iframe>
+              </div>
+
+              <div class="mobile-screenshot-container">
+                <iframe src="./assets/hifi-mobile.pdf"></iframe>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="thirds-container" id="development">
+
+            <div class="full-thirds">
+              <h3>Development</h3>
+
+              <p>
+                I developed a prototype of my redesign on the link below: <br>
+                <a href="https://vegananteater125.github.io/responsive-redesign/" target="_blank">vegananteater125.github.io/responsive-redesign/</a>
+                <br>
+              </p>
+            </div>
+
+          </div>
+
+
+
+      </div>
+    </body>
+ 
+
+</html>
